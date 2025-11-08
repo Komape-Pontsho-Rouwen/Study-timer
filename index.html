@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thando's Study Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Luthando's Study Timer 💜</h1>
+    
+    <p id="message">Ready to focus, Princess?</p>
+    
+    <!-- Button to Generate Motivation -->
+    
+    
+    <button onclick="generateMotivation()" class="motivate-btn">✨ Generate Motivation ✨</button>
+    
+    <p id="mode">Study Time</p>
+    
+    <!-- Circle Timer -->
+    <div class="timer-circle">
+      <svg width="280" height="280">
+        <circle class="bg" cx="140" cy="140" r="120"></circle>
+        <circle class="progress" id="progress" cx="140" cy="140" r="120"></circle>
+      </svg>
+      <div id="timer">25:00</div>
+    </div>
+    
+    <div class="buttons">
+      <button onclick="start()">Start</button>
+      <button onclick="pause()">Pause</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+
+    <div id="stopBtn" style="display: none;">
+      <button onclick="stopSound()" class="stop">Stop Sound</button>
+    </div>
+    
+    <div class="settings">
+      <label>Study Time: <input type="number" id="studyTime" value="25" min="1"></label>
+      <label>Break Time: <input type="number" id="breakTime" value="5" min="1"></label>
+      
+      <label>
+        Sound: 
+        <select id="soundType">
+          <option value="beep">Beep</option>
+          <option value="alarm">Alarm</option>
+          <option value="bell">Bell</option>
+          <option value="siren">Siren</option>
+          <option value="buzz">Buzz</option>
+        </select>
+      </label>
+      
+      <label>Volume: <input type="range" id="volume" min="0" max="100" value="50"></label>
+      <button onclick="testSound()">Test Sound</button>
+    </div>
+    
+    <footer>Made with 💜 by Pontsho for Luthando</footer>
+  </div>
+
+  <canvas id="confetti"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
